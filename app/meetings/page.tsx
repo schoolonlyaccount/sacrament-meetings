@@ -1,13 +1,9 @@
 import type { SacramentMeeting } from '@/lib/types';
 import MeetingCard from '@/components/MeetingCard';
+import { getMeetings } from '@/lib/meetings-db';
 
 export default async function Meetings() {
-    const response = await fetch('http://localhost:3000/api/meetings');
-    if (!response.ok) {
-        throw new Error('Failed to fetch meetings');
-    }
-
-    const meetings: SacramentMeeting[] = await response.json();
+    const meetings: SacramentMeeting[] = getMeetings();
     const sortedMeetings = [...meetings].sort((a, b) => b.date.localeCompare(a.date));
 
     return (
