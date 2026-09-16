@@ -17,5 +17,9 @@ export default async function Meeting({ params }: Props) {
 
     const meeting: SacramentMeeting = await response.json();
 
-    return <MeetingDetail meeting={meeting} />;
+    return (
+        <main>
+            <MeetingDetail meeting={meeting} />
+        </main>
+    );
 }

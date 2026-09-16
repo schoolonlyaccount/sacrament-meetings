@@ -8,7 +8,7 @@ export default async function MeetingCurrent() {
     const sunday = new Date(today);
     sunday.setDate(today.getDate() - dayOfWeek);
 
-    const sundayString = sunday.toISOString().split("T")[0];
+    const sundayString = new Intl.DateTimeFormat("en-CA").format(sunday);
 
     const response = await fetch(
         `http://localhost:3000/api/meetings?date=${sundayString}`
@@ -19,10 +19,11 @@ export default async function MeetingCurrent() {
     }
 
     const meetings: SacramentMeeting[] = await response.json();
+    const meeting = meetings[0];
 
-    if (meetings.length === 0) {
+    if (!meeting) {
         redirect("/meetings");
     }
 
-    redirect(`/meetings/${meetings[0].id}`);
+    redirect(`/meetings/${meeting.id}`);
 }

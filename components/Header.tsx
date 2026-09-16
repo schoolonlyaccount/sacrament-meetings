@@ -12,7 +12,7 @@ export default function Header() {
                             The Butterfly Ward
                         </span>
                     </div>
-                    <p className="text-2xl mt-4">Current Date: {new Date().getMonth() + 1}/{new Date().getDate()}/{new Date().getFullYear()}</p>
+                    <p className="text-2xl mt-4">Current Date: {new Intl.DateTimeFormat('en-CA').format(new Date())}</p>
                 </div>
             </div>
 
