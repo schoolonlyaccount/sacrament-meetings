@@ -2,7 +2,7 @@ import { getMeetings } from '@/lib/meetings-db';
 
 export async function GET(request: Request) {
     const date = new URL(request.url).searchParams.get('date');
-    const meetings = getMeetings(date);
+    const meetings = await getMeetings('', 1, date);
 
     return Response.json(meetings);
 }

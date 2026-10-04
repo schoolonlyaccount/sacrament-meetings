@@ -10,7 +10,7 @@ export default async function MeetingCurrent() {
 
     const sundayString = new Intl.DateTimeFormat("en-CA").format(sunday);
 
-    const meetings = getMeetings(sundayString);
+    const meetings = await getMeetings(sundayString);
     const meeting = meetings[0];
 
     if (!meeting) {

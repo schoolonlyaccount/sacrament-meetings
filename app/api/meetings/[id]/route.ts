@@ -4,10 +4,7 @@ type RouteContext = {
     params: Promise<{ id: string }>;
 };
 
-export async function GET(
-    _request: Request,
-    { params }: RouteContext
-) {
+export async function GET(_request: Request, { params }: RouteContext) {
     const { id } = await params;
     const numericId = Number(id);
 
@@ -18,7 +15,7 @@ export async function GET(
         );
     }
 
-    const meeting = getMeetingById(numericId);
+    const meeting = await getMeetingById(numericId);
 
     if (!meeting) {
         return Response.json(

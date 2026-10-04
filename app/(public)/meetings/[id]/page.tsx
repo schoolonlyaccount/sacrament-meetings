@@ -9,7 +9,7 @@ type Props = {
 export default async function Meeting({ params }: Props) {
     const { id } = await params;
 
-    const meeting: SacramentMeeting | null = getMeetingById(Number(id));
+    const meeting: SacramentMeeting | null = await getMeetingById(Number(id));
     if (!meeting) {
         throw new Error('Meeting not found');
     }
