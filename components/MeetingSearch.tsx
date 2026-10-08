@@ -28,7 +28,7 @@ export default function MeetingSearch() {
             defaultValue={searchParams.get('query')?.toString()}
             onChange={(e) => handleSearch(e.target.value)}
             aria-label="Search meetings"
-            className="border p-2 rounded w-[80%] mx-auto block"
+            className="border border-white p-2 rounded w-[80%] mx-auto block"
         />
     );
 }

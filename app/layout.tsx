@@ -22,7 +22,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
 
         <div className="flex-1 bg-black">
-          {children}
+          <main>
+            {children}
+          </main>
         </div>
 
         <Footer />

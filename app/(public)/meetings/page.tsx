@@ -15,19 +15,19 @@ export default async function Meetings(props: { searchParams?: Promise<{ query?:
     ]);
 
     return (
-        <main>
-            <div className="text-center p-2 mb-4">
-                <h1 className="text-4xl m-2 font-bold">Meetings</h1>
-                <p className="text-lg m-2">Here you can find and view all sacrament meetings from newest to oldest.</p>
+        <div>
+            <div className="text-center p-4 mb-4">
+                <h1 className="text-4xl m-2 font-bold text-white">Meetings</h1>
+                <p className="text-lg m-2 text-white">Here you can find and view all sacrament meetings from newest to oldest.</p>
             </div>
 
             <MeetingSearch />
-            <section className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3">
+            <section className="grid grid-cols-1 gap-4 m-6 sm:grid-cols-2 lg:grid-cols-3">
                 {sortedMeetings.map((m) => (
                     <MeetingCard key={m.id} meeting={m} />
                 ))}
             </section>
             <Pagination totalPages={totalPages} />
-        </main>
+        </div>
     );
 }

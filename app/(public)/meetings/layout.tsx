@@ -11,11 +11,11 @@ export default function MeetingsLayout({
     const pathname = usePathname();
     return (
         <section>
-            <nav className="border-b p-4">
-                <ul className="flex flex-row gap-x-2">
+            <nav className="border-t-6 border-[var(--secondary-color)] bg-[var(--tertiary-color)]">
+                <ul className="flex flex-row gap-x-2 p-2">
                     <li>
                         <Link href="/meetings"
-                            className={`p-2 text-center ${pathname === '/meetings' ? 'active' : 'inactive'
+                            className={`nav-link-box ${pathname === '/meetings' ? 'active' : 'inactive'
                                 }`}
                             aria-current={pathname === '/' ? 'page' : undefined}>
                             All Meetings
@@ -24,7 +24,7 @@ export default function MeetingsLayout({
 
                     <li>
                         <Link href="/meetings/current"
-                            className={`p-2 text-center ${pathname === '/meetings/current' ? 'active' : 'inactive'
+                            className={`nav-link-box ${pathname === '/meetings/current' ? 'active' : 'inactive'
                                 }`}
                             aria-current={pathname === '/meetings/current' ? 'page' : undefined}>
                             Current Meeting

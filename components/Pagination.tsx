@@ -15,13 +15,13 @@ export function Pagination({ totalPages }: { totalPages: number }) {
     }
 
     return (
-        <nav aria-label="Pagination" className="flex justify-center items-center gap-4 mb-4">
+        <nav aria-label="Pagination" className="flex justify-center items-center gap-4 mb-4 text-center">
             {currentPage > 1 && (
-                <Link href={createPageURL(currentPage - 1)} className="border p-2 rounded">Previous</Link>
+                <Link href={createPageURL(currentPage - 1)} className="border p-2 rounded w-[6rem]">Previous</Link>
             )}
-            <span className="border p-2 rounded">Page {currentPage} of {totalPages}</span>
+            <span className="border p-2 rounded w-[8rem]">Page {currentPage} of {totalPages}</span>
             {currentPage < totalPages && (
-                <Link href={createPageURL(currentPage + 1)} className="border p-2 rounded">Next</Link>
+                <Link href={createPageURL(currentPage + 1)} className="border p-2 rounded w-[6rem]">Next</Link>
             )}
         </nav>
     );

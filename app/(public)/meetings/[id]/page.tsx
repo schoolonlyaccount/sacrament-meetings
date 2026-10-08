@@ -15,8 +15,6 @@ export default async function Meeting({ params }: Props) {
     }
 
     return (
-        <main>
-            <MeetingDetail meeting={meeting} />
-        </main>
+        <MeetingDetail meeting={meeting} />
     );
 }
